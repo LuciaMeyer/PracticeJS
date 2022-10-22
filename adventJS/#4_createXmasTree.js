@@ -28,7 +28,7 @@ Ten en cuenta que el árbol es un string y necesitas los saltos de línea \n par
 
 */
 
-export default function createXmasTree(height) {
+const createXmasTree = height => {
     if (height > 100 || height < 1) return false  
     let tree = ''
     for(let i = 0; i < height; i++) {
