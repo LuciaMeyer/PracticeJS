@@ -29,22 +29,22 @@ Ten en cuenta que el árbol es un string y necesitas los saltos de línea \n par
 */
 
 const createXmasTree = height => {
-    if (height > 100 || height < 1) return false  
-    let tree = ''
+    if (height > 100 || height < 1) return false;  
+    let tree = '';
     for(let i = 0; i < height; i++) {
-      const totalAst = i * 2 + 1
-      const totalUnd = height - i - 1
-      const ast = '*'.repeat(totalAst)
-      const und = '_'.repeat(totalUnd)
-      tree += und + ast + und + '\n'
+      const totalAst = i * 2 + 1;
+      const totalUnd = height - i - 1;
+      const ast = '*'.repeat(totalAst);
+      const und = '_'.repeat(totalUnd);
+      tree += und + ast + und + '\n';
     }
-    const baseSide = '_'.repeat(height - 1)
-    const base = (baseSide + '#' + baseSide + '\n').repeat(2).trim()
-    let totalTree = tree + base
-    return totalTree
+    const baseSide = '_'.repeat(height - 1);
+    const base = (baseSide + '#' + baseSide + '\n').repeat(2).trim();
+    let totalTree = tree + base;
+    return totalTree;
 }
 
-console.log(createXmasTree(4))
-console.log(createXmasTree(6))
+console.log(createXmasTree(4));
+console.log(createXmasTree(6));
 
 

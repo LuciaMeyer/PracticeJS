@@ -19,9 +19,9 @@ const listGifts = letter => {
   .filter(l => l !== '' && l.charAt(0) !== '_')
   .reduce((count, e) => {
     count[e] = (count[e] || 0) + 1;
-    return count
+    return count;
     }, {});
-  return obj
+  return obj;
 }
 
 console.log(listGifts(letter))

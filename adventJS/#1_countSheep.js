@@ -25,7 +25,7 @@ const countSheep = ovejas => {
       o.name.toLowerCase().includes('n') &&
       o.name.toLowerCase().includes('a') &&
       o.color === 'rojo'
-    ))
-    return ov
+    ));
+    return ov;
 }
 console.log(countSheep(ovejas))
