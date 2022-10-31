@@ -131,11 +131,25 @@ console.log(arrPush)
 
 //___________________________.reduce()
 // Ejecuta una función reductora sobre cada elemento de un array, devolviendo como resultado un único valor. No modifica el arreglo original
-let sumaValores = [0, 1, 2, 3].reduce((a, b) => a + b);
+// a es el acumulador, b el valor actual
+let sumaValores = [0, 1, 2, 3].reduce((acc, i) => acc + i);
 console.log(sumaValores)
 
-let sumaArray = [[0,1], [2,3], [4,5]].reduce((a,b) => a.concat(b));
+let sumaArray = [[0,1], [2,3], [4,5]].reduce((acc, i) => acc.concat(i));
 console.log(sumaArray);
+
+// puedo pasarle como segundo parámetro un valor inicial, puede ser un número, array, objeto, string...si no se lo paso toma el valor inicial como el primer elemento del array y empieza a iterar desde el segundo elemento.
+
+let conValorInicial = [0, 1, 2, 3].reduce((acc, i) => {
+  return acc + i
+ }, 3);
+ console.log(conValorInicial);
+
+const string = ['mi', 'nombre', 'es', 'Lucía']
+const res = string.reduce((acc, i) => {
+  return acc += ' ' + i; 
+}, 'Hola!, ');
+console.log(res)
 
 //___________________________.reverse()
 // Invierte el orden de los elementos de un array. Modifica el array original
