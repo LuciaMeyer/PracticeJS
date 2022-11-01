@@ -13,8 +13,7 @@ console.log(Array.isArray([1, 2, 3]));
 
 //___________________________Array.of()
 //Crea una nueva instancia de Array con un número variable de parámetros, independientemente del número y del tipo de dichos parámetros.
-console.log(Array.of(7));
-
+console.log(Array.of(7,3,2));
 
 
 // --> PROPIEDADES DE INSTANCIA
@@ -35,7 +34,8 @@ console.log([1,2,3].concat([4,5,6]));
 //___________________________.copyWithin()
 // Copia una secuencia de elementos de un array dentro del propio array.
 const arr = ['a', 'b', 'c', 'd', 'e'];
-console.log(arr.copyWithin(0, 3, 4));
+// copia en el index 0 el elemento de la posición 3
+console.log(arr.copyWithin(0, 3));
 
 //___________________________.entries()
 // Retorna un nuevo objeto Array Iterator que contiene los pares clave/valor para cada índice de la matriz.
@@ -131,14 +131,14 @@ console.log(arrPush)
 
 //___________________________.reduce()
 // Ejecuta una función reductora sobre cada elemento de un array, devolviendo como resultado un único valor. No modifica el arreglo original
-// a es el acumulador, b el valor actual
+// acc es el acumulador, i el valor actual
 let sumaValores = [0, 1, 2, 3].reduce((acc, i) => acc + i);
 console.log(sumaValores)
 
 let sumaArray = [[0,1], [2,3], [4,5]].reduce((acc, i) => acc.concat(i));
 console.log(sumaArray);
 
-// puedo pasarle como segundo parámetro un valor inicial, puede ser un número, array, objeto, string...si no se lo paso toma el valor inicial como el primer elemento del array y empieza a iterar desde el segundo elemento.
+// puedo pasarle como segundo parámetro un valor inicial. Si no se lo paso toma el valor inicial como el primer elemento del array y empieza a iterar desde el segundo elemento.
 
 let conValorInicial = [0, 1, 2, 3].reduce((acc, i) => {
   return acc + i
@@ -150,6 +150,17 @@ const res = string.reduce((acc, i) => {
   return acc += ' ' + i; 
 }, 'Hola!, ');
 console.log(res)
+
+const letter = 'bici coche balón playstation bici coche balón peluche'
+const listGifts = letter => { 
+  let obj = letter.split(' ')
+  .reduce((acc, e) => {
+    acc[e] = (acc[e] || 0) + 1; // setea la propiedad con nombre según la posición de e, y como valor (lo haya acumulado o 0)+1
+    return acc;
+    }, {});
+  return obj;
+}
+console.log(listGifts(letter))
 
 //___________________________.reverse()
 // Invierte el orden de los elementos de un array. Modifica el array original
@@ -204,13 +215,28 @@ console.log(arrUnshift.unshift(5));
 console.log(arrUnshift)
 
 
-
-/*****************  MIX : STRINGS & NÚMEROS  *****************/
+/*****************  STRINGS & NÚMEROS  *****************/
+//___________________________.repeat()
+// Construye y devuelve una nueva cadena que contiene el número especificado de copias de la cadena en la cual fue llamada, concatenados. Sintaxis: str.repeat(count)
+console.log('abc'.repeat(2));    
 
 //___________________________.split()
 // Divide (fragmenta) un string en dos o más sub cadenas usando un separador (divisor)
 let arr3 = 'hola como estas'
-arr3.split(' ')
+console.log(arr3.split(' '));
+
+const createXmasTree = height => {
+  let tree = '';
+  for(let i = 0; i < height; i++) {
+    const totalAst = i * 2 + 1;
+    const totalUnd = height - i - 1;
+    const ast = '*'.repeat(totalAst);
+    const und = '_'.repeat(totalUnd);   
+    tree += und + ast + und + '\n';
+  }
+  return tree;
+};
+console.log(createXmasTree(4)); // Quokka no consologue saltos, ver en consola o run
 
 //___________________________.toLowerCase()
 // Devuelve el valor en minúsculas de la cadena que realiza la llamada.
@@ -293,15 +319,20 @@ objValues = {a:1, b:2, c:3};
 console.log(Object.values(objValues));
 
 
-//__________________________Funciones:
+/*****************  EXTRAS  *****************/
 
-function basicOp1(operation, value1, value2) {
-  //   if(operation === '+') return value1 + value2
-  //   if(operation === '-') return value1 - value2
-  //   if(operation === '*') return value1 * value2
-  //   if(operation === '/') return value1 / value2
-    return eval(value1+operation+value2);
-  } 
+//___________________________JSON.stringify()
 
-// The eval() function evaluates or executes an argument.This function take string a it parameter.
-// If the argument is an expression, eval() evaluates the expression. If the argument is one or more JavaScript statements, eval() executes the statements.
+console.log(JSON.stringify({ x: 5, y: 6 }));
+// expected output: "{"x":5,"y":6}"
+
+console.log(JSON.stringify([new Number(3), new String('false'), new Boolean(false)]));
+// expected output: "[3,"false",false]"
+
+//___________________________eval()
+// eval() es una propiedad de la función del objeto global. Evalúa un código JavaScript representado como una cadena de caracteres (string), sin referenciar a un objeto en particular.Sintaxis eval(cadena de caracteres o string)
+console.log(eval(new String("2 + 2"))) // ver en consola o en run
+console.log(eval("2 + 2"))
+let expresion = new String("2 + 2")
+console.log(eval(expresion.toString()))
+
