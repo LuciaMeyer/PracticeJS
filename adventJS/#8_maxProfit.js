@@ -8,24 +8,35 @@ Vamos a escribir una función que reciba la lista de precios de una criptomoneda
 La lista de precios es un array de números y representa el tiempo de izquierda a derecha. Por lo que ten en cuenta que no puedes comprar a un precio que esté a la derecha de la venta y no puedes vender a un precio que esté a la izquierda de la compra.
 
 Por ejemplo:
-*/
 
 const pricesBtc = [39, 18, 29, 25, 34, 32, 5]
-maxProfit(pricesBtc) // -> 16 (compra a 18, vende a 34)
+maxgan(pricesBtc) // -> 16 (compra a 18, vende a 34)
 
 const pricesEth = [10, 20, 30, 40, 50, 60, 70]  
-maxProfit(pricesEth) // -> 60 (compra a 10, vende a 70)
+maxgan(pricesEth) // -> 60 (compra a 10, vende a 70)
 
-// Si ese día no se puede sacar ningún beneficio, tenemos que devolver -1 para evitar que hagamos una locura:
+Si ese día no se puede sacar ningún beneficio, tenemos que devolver -1 para evitar que hagamos una locura:
 
 const pricesDoge = [18, 15, 12, 11, 9, 7]
-maxProfit(pricesDoge) // -> -1 (no hay ganancia posible)
+maxgan(pricesDoge) // -> -1 (no hay ganancia posible)
 
 const pricesAda = [3, 3, 3, 3, 3]
-maxProfit(pricesAda) // -> -1 (no hay ganancia posible)
+maxgan(pricesAda) // -> -1 (no hay ganancia posible)
+*/
 
-
-const maxProfit = prices => {
-
-  
+const maxgan = prices => {
+    let buy = prices[0];
+    let profit = 0;
+    for (let i = 0; i < prices.length; i++) {
+        buy = Math.min(buy, prices[i])
+        profit = Math.max(profit, prices[i] - buy)
+    };
+    if(profit === 0) return -1;
+    return profit;
 };
+
+console.log(maxgan([39, 18, 29, 25, 34, 32, 5]))
+console.log(maxgan([10, 20, 30, 40, 50, 60, 70]))
+console.log(maxgan([18, 15, 12, 11, 9, 7]))
+console.log(maxgan([3, 3, 3, 3, 3]))
+                    
