@@ -24,11 +24,21 @@ getmonedas(100) // [0, 0, 0, 0, 0, 2] -> dos monedas de 50 céntimos
 La dificultad del reto está en saber utilizar correctamente una estructura que te permita conocer las monedas que tienes disponible para crear el array con la devolución, ya que debes usar siempre el menor número de monedas posible. ¡Suerte 👩‍💻👨‍💻!.
 */
 
-const getmonedas = num => {
-
-}
-console.log(getmonedas(100));
-console.log(getmonedas(3));
-console.log(getmonedas(5));
-console.log(getmonedas(16));
-console.log(getmonedas(16));
+const getCoins = change => {
+    
+    let coins =  [1,2,5,10,20,50];
+    let comb = [0,0,0,0,0,0,];
+    for (let i = coins.length -1; i >= 0; i--) {
+        if(change >= coins[i]) {
+            if(change % coins[i] === 0) comb[i] = change / coins[i];
+            else comb[i] = Math.trunc(change / coins[i]);
+            change = change % coins[i];
+        }
+    } 
+    return comb;
+};
+console.log(getCoins(100));
+console.log(getCoins(3));
+console.log(getCoins(5));
+console.log(getCoins(16));
+console.log(getCoins(16));
