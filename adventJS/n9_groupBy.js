@@ -34,7 +34,7 @@ const groupBy = (collection, it) => {
   collection.forEach(e => {
     let prop;
     if(typeof it === 'function') prop = it(e);
-    else prop = e[it]; // string
+    else prop = e[it]; 
     obj[prop] ? obj[prop].push(e) : obj[prop] = [e];
   });
   return obj;
