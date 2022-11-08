@@ -25,11 +25,11 @@ La dificultad del reto está en encontrar una fórmula sencilla que nos diga el 
 const shouldBuyFidelity = times => {
     let normalPrice = 12*times;
     let cardPrice = 250;
-    for(let i = 1; i < times+1; i++) {
+    for(let i = 1; i <= times; i++) {
         cardPrice += 12*0.75**i;
     }
-    if(cardPrice < normalPrice) return true;
-    else return false;
+    return cardPrice < normalPrice;
 };
 
-console.log(shouldBuyFidelity(100)); 
+console.log(shouldBuyFidelity(1));
+console.log(shouldBuyFidelity(100));
