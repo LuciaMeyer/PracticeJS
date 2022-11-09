@@ -33,3 +33,5 @@ const shouldBuyFidelity = times => {
 
 console.log(shouldBuyFidelity(1));
 console.log(shouldBuyFidelity(100));
+console.log(shouldBuyFidelity(23));
+console.log(shouldBuyFidelity(24));
