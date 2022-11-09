@@ -48,12 +48,24 @@ La dificultad del reto está en pensar que sólo podemos configurar el salto del
 */
 
 const getMinJump = obstacles => {
-
-    return true;
+    let salto = 2; 
+    let find = 2;
+    while (find <= Math.max(...obstacles)) {
+        let obs = obstacles.find(o => o === find);
+        if(!obs) {
+            find = find + salto;
+        } else {
+            salto = salto+1;
+            find = salto;            
+        }
+    }
+    return salto;
 };
 console.log(getMinJump([1, 2, 3, 5]));
 console.log(getMinJump([3, 7, 5]));
 console.log(getMinJump([9, 5, 1]));
-
+console.log(getMinJump([5, 3, 6, 7, 9]));
+console.log(getMinJump([2, 4, 6, 8, 10]));
+console.log(getMinJump([14,10,8,2,3,6]));
  
 
