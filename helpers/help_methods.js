@@ -189,6 +189,8 @@ let frutas = ['guindas', 'manzanas', 'bananas'];
 console.log(frutas.sort()); 
 let puntos = [1, 10, 2, 21];
 console.log(puntos.sort());
+//Para ordenar de forma numérica se suma una función:
+console.log(puntos.sort((a,b) => a-b));
 
 //___________________________.splice()
 // Cambia el contenido de un array eliminando elementos existentes y/o agregando nuevos elementos.
@@ -336,3 +338,6 @@ console.log(eval("2 + 2"))
 let expresion = new String("2 + 2")
 console.log(eval(expresion.toString()))
 
+//___________________________Math
+// --> https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math
+// --> https://lenguajejs.com/javascript/number/objeto-math/
