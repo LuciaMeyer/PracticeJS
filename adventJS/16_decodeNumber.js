@@ -41,13 +41,15 @@ const decodeNumber = symbols => {
         else if(symbols[i] === ':') arr.push(10);
         else if(symbols[i] === ';') arr.push(50);
         else if(symbols[i] === '!') arr.push(100);
-        else arr.push('other');
+        else arr.pu-sh('other');
     }
-    for (let i = 0; i < arr.length; i++) {
-        if(arr[i] >= arr[i+1] || arr[arr.length-1] === arr[i]) num = num + arr[i];
-        else num = num - arr[i];
-    }
+    
     if(arr.includes('other')) return NaN;
+
+    for (let i = 0; i < arr.length; i++) {
+        if(arr[i] >= arr[i+1] || arr.length-1 === i) num += arr[i];
+        else num -= arr[i];
+    }
     return num;
 };
 
