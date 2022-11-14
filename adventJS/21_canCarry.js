@@ -41,10 +41,10 @@ const canCarry = (capacity, trip) => {
     let end = Math.max(...(trip.map(t => t[2])));
     let start = trip[0][1];
     while (start < end ) {
-        let carga = 0;
+        let count = 0;
         for (let i = 0; i < trip.length; i++) {
-            if (start >= trip[i][1] && start < trip[i][2]) carga += trip[i][0];         
-            if (carga > capacity) return false;
+            if (start >= trip[i][1] && start < trip[i][2]) count += trip[i][0];         
+            if (count > capacity) return false;
             start++;
         }      
     }
