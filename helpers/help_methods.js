@@ -22,8 +22,6 @@ console.log(Array.of(7,3,2));
 // Indica el número de elementos 
 console.log([1,2,3].length);
 		
-
-
 // -->  MÉTODOS DE INSTANCIA 
 
 //___________________________.concat()
@@ -218,6 +216,13 @@ console.log(arrUnshift)
 
 
 /*****************  STRINGS & NÚMEROS  *****************/
+
+//___________________________String.fromCharCode()
+// método estático que devuelve una cadena creada mediante el uso de una secuencia de valores Unicode especificada.
+// ejemplo imprimir abecedario en String o array
+console.log(String.fromCharCode(...Array(123).keys()).slice(97))
+console.log(String.fromCharCode(...Array(123).keys()).slice(97).split(''));
+
 //___________________________.repeat()
 // Construye y devuelve una nueva cadena que contiene el número especificado de copias de la cadena en la cual fue llamada, concatenados. Sintaxis: str.repeat(count)
 console.log('abc'.repeat(2));    
