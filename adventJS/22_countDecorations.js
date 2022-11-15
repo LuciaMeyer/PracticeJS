@@ -6,7 +6,8 @@
 Necesitamos una función que pasándole un árbol binario nos diga el número de decoraciones que necesitamos. Para ello tenemos un objeto que sería la representación del árbol y que nos indica en cada nivel el número de ramas a decorar.
 
 Lo mejor es que veamos un ejemplo:
-// tenemos el árbol en forma de objeto*/
+tenemos el árbol en forma de objeto*/
+
 const tree = {
   value: 1, // el nodo raíz siempre es uno, porque es la estrella ⭐
   left: {
@@ -27,11 +28,10 @@ const tree = {
  2     3
 
 1 + 2 + 3 = 6
-*/
 
-countDecorations(tree) // 6
+countDecorations(tree) 6 */
 
-const bigTree = {
+const bigTree1 = {
   value: 1,
   left: {
     value: 5,
@@ -76,6 +76,11 @@ countDecorations(bigTree) --> 28
 */
 
 const countDecorations = bigTree => {
-
-  return 0
+  if(!bigTree.left&& !bigTree.right) return bigTree.value;
+  if(!bigTree.left) return bigTree.value + countDecorations(bigTree.right);
+  if(!bigTree.right) return bigTree.value + countDecorations(bigTree.left);
+  return bigTree.value + countDecorations(bigTree.right) + countDecorations(bigTree.left);
 };
+
+console.log(countDecorations(bigTree1))
+console.log(countDecorations(tree)) 
