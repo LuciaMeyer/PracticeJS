@@ -75,7 +75,7 @@ countDecorations(bigTree) --> 28
  Por cierto, Bellf Gates me ha contado que este tipo de ejercicio es muy típico en las entrevistas de trabajo para programadores. ¿Lo sabías?
 */
 
-const countDecorations = bigTree => {
+export const countDecorations = bigTree => {
   if(!bigTree.left&& !bigTree.right) return bigTree.value;
   if(!bigTree.left) return bigTree.value + countDecorations(bigTree.right);
   if(!bigTree.right) return bigTree.value + countDecorations(bigTree.left);
