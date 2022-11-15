@@ -56,11 +56,12 @@ const to   = 'MID'
 */
 
 const canReconfigure = (from, to) => {
-    if(from.length !== to.length) return false
 
-
-    return true
-
+    if(from.length !== to.length) return false;
+    for (let i = 1; i < from.length; i++) { 
+        if (from[i] === from[i-1] && to[i] !== to[i-1] || from[i] !== from[i-1] && to[i] === to[i-1]) return false;
+    }   
+    return true;
 };
 console.log(canReconfigure('BAL', 'LIB')); // true
 console.log(canReconfigure('CON', 'JUU')); // false
@@ -68,4 +69,3 @@ console.log(canReconfigure('XBOX', 'XXBO')); // false
 console.log(canReconfigure('XBOX', 'XOBX')); // true
 console.log(canReconfigure('MMM', 'MID')) // false
 console.log(canReconfigure('AA', 'MID')) // false
-
