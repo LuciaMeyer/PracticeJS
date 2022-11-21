@@ -86,10 +86,38 @@ for (let value of forOfString) {
   console.log(value);
 }   
 
-//___________________________.includes()
-// Determina si un array o string incluye un determinado elemento y retorna un booleano según corresponda.
-console.log([1, 2, 3].includes(2));
-console.log('Lucia'.includes('c'));
+//___________________________.includes() --> ARRAY & STRING
+/* ARRAY:
+
+Determina si una matriz incluye un determinado elemento, devuelve true o false según corresponda.
+Recibe 2 parámetros:
+- value`ToFind: El valor a buscar
+- fromIndex (opcional): Posición en la matriz en la cuál se debe comenzar a buscar valueToFind; el primer caracter a buscar se encuentra en fromIndex. Un valor negativo inicia la búsqueda desde array.length + fromIndex en adelante. El valor por defecto es 0.
+Si fromIndex es mayor o igual que la longitud de la matriz, se devuelve false. No se buscará en la matriz.
+*/
+const arrInlc = ['a', 'b', 'c'];
+arrInlc.includes('c', 2);   // true
+arrInlc.includes('c', 3);   // false
+arrInlc.includes('c', 100); // false
+
+/*
+STRING:
+
+Determina si una cadena de texto puede ser encontrada dentro de otra cadena de texto, devolviendo true o false según corresponda.
+Recibe 2 parámetros:
+- searchString: Una cadena a buscar en el texto.
+- position (opcional): La posición dentro de la cadena en la cual empieza la búsqueda de searchString (Por defecto este valor es 0).
+El método includes() es "case sensitive" (tiene en cuenta mayúsculas y minúsculas).
+*/
+const str = 'To be, or not to be, that is the question.'
+console.log(str.includes('To be'));    
+console.log(str.includes('To be', 1)); 
+console.log(str.includes('question')); 
+console.log(str.includes('TO BE'));
+
+const sentence = 'Linda mañana verdad?.';  
+const word = 'verdad';
+console.log(`The word "${word}" ${sentence.includes(word) ? 'is' : 'is not'} in the sentence`);
 
 //___________________________.indexOf()
 // Retorna el primer índice en el que se puede encontrar un elemento dado en el array, ó retorna -1 si el elemento no esta presente.
@@ -247,12 +275,12 @@ console.log(createXmasTree(4)); // Quokka no consologue saltos, ver en consola o
 
 //___________________________.toLowerCase()
 // Devuelve el valor en minúsculas de la cadena que realiza la llamada.
-var texto = "ALFABETO";
+let texto = "ALFABETO";
 console.log(texto.toLowerCase());
 
 //___________________________.toUpperCase()
 // Devuelve el valor convertido en mayúsculas de la cadena que realiza la llamada.
-var texto1 = "alfabeto"
+let texto1 = "alfabeto"
 console.log(texto1.toUpperCase());
 
 //___________________________.trim()
@@ -272,7 +300,7 @@ console.log(parseFloat('4.567abcdefgh'));
 console.log(parseInt('1.5263')) // en este caso no considera los decimales, imprime 1
 
 //___________________________.toFixed()
-// recibe un numero y devuelve la cantidad de decimales que se le indique. Devuelve una string!
+// Recibe un numero y devuelve la cantidad de decimales que se le indique. Devuelve una string!
 let num = 1.235486
 num1 = num.toFixed(2)
 console.log(num1)
@@ -291,20 +319,11 @@ console.log(x.toString(2));
 let cadena1 = "Linda mañana verdad?";
 console.log(cadena1.slice(6, -8));
 
-//___________________________.includes()
-// Determina si una cadena de texto puede ser encontrada dentro de otra cadena de texto, devolviendo true o false según corresponda.
-const sentence = 'Linda mañana verdad?.';
-const word = 'verdad';
-console.log(sentence.includes('Linda'))
-console.log(`The word "${word}" ${sentence.includes(word) ? 'is' : 'is not'} in the sentence`);
-
-
-
 
 /*****************  OBJETOS  *****************/
 
 //___________________________for...in
-// recorre el objeto como un for, y por cada paso se puede objeter la propiedad, const prop en este caso, y el valor de la misma
+// recorre el objeto como un for, y por cada paso se puede obteter la propiedad y el valor de la misma
 const object = { a: 1, b: 2, c: 3 };
 for (const prop in object) {
   console.log(`${prop}: ${object[prop]}`);
@@ -325,24 +344,145 @@ console.log(Object.keys(objKeys));
 objValues = {a:1, b:2, c:3};
 console.log(Object.values(objValues));
 
+//___________________________Object.create()
+// Crea un objeto nuevo, utilizando un objeto existente como el prototipo del nuevo objeto creado.
+const person = {
+  isHuman: false,
+  printIntroduction: function() {
+    return `My name is ${this.name}. Am I human? ${this.isHuman}`;
+  }
+};
 
-/*****************  EXTRAS  *****************/
+const me = Object.create(person);
+me.name = 'Lucía'; 
+me.isHuman = true; 
+console.log(me.printIntroduction());
 
-//___________________________JSON.stringify()
+//___________________________Object.hasOwnProperty()
+// Devuelve un booleano indicando si el objeto tiene la propiedad especificada.
+o = { prop: 'exists' };
+console.log(o.hasOwnProperty('prop')); 
+console.log(o.hasOwnProperty('otraProp'));
 
-console.log(JSON.stringify({ x: 5, y: 6 }));
-// expected output: "{"x":5,"y":6}"
+//___________________________ITERAR UN OBJETOS
 
-console.log(JSON.stringify([new Number(3), new String('false'), new Boolean(false)]));
-// expected output: "[3,"false",false]"
+let perro = {
+  nombre: "Scott",
+  color: "Negro",
+  macho: true,
+  edad: 5
+};
 
-//___________________________eval()
-// eval() es una propiedad de la función del objeto global. Evalúa un código JavaScript representado como una cadena de caracteres (string), sin referenciar a un objeto en particular.Sintaxis eval(cadena de caracteres o string)
-console.log(eval(new String("2 + 2"))) // ver en consola o en run
-console.log(eval("2 + 2"))
-let expresion = new String("2 + 2")
-console.log(eval(expresion.toString()))
+// --> Usando la propiedad Object.keys() + for
+let claves = Object.keys(perro); // [ 'nombre', 'color', 'macho', 'edad' ]
+for(let i=0; i< claves.length; i++){
+  console.log(perro[claves[i]]);
+}
+
+// --> Usando la propiedad Object.values() + forEach
+let valores = Object.values(perro);   // ["Scott", "Negro", true, 5];
+for(let i=0; i< valores.length; i++){
+  console.log(valores[i]);
+}
+
+// --> Usando un bucle for...in
+for (let clave in perro){
+  console.log(perro[clave]);
+};
+
+// --> Usando la propiedad Object.entries() + forEach()
+Object.entries(perro).forEach(([key, value]) => console.log(value)); // Scott, Negro, true, 5
+
+// --> - Usando la propiedad Object.entries() y un bucle for...of
+for(const [key, value] of Object.entries(perro)){
+  console.log(value)
+};
+
+/*****************  OTROS  *****************/
 
 //___________________________Math
-// --> https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math
-// --> https://lenguajejs.com/javascript/number/objeto-math/
+/* es un objeto incorporado que tiene propiedades y métodos para constantes y funciones matemáticas. No es un objeto de función. El objeto Math no se puede editar. Todas las propiedades y métodos de Math son estáticos.
+PARA CONOCERLOS
+--> https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math
+--> https://lenguajejs.com/javascript/number/objeto-math/
+*/
+
+//___________________________JSON.stringify()
+// recibe un objeto de JavaScript y lo transforma en una cadena JSON.
+console.log(JSON.stringify({ x: 5, y: 6 }));
+
+console.log(JSON.stringify([new Number(3), new String('false'), new Boolean(false)]));
+
+const myObj = { name: 'Skip', age: 2, favoriteFood: 'Steak' };
+const myObjStr = JSON.stringify(myObj);
+console.log(myObjStr);
+
+// Puede tomar dos argumentos adicionales: el primero es una función replacer y el segundo es un valor String o Number que se utiliza como un space en la cadena que se devuelve.
+
+// El parámetro replacer (de reemplazo) puede ser tanto una función como o un array.
+
+// - ejemplo con replacer como funcion:
+
+const user = {id: 229,  name: 'Sammy', email: 'Sammy@domain.com'};
+const user1 = {id: 229,  name: 'Sammy', mail: 'Sammy@domain.com'};
+
+function replacer(key, value) {
+typeof value;
+  if (key === 'email') return undefined;
+  return value;
+};
+const userStr = JSON.stringify(user, replacer);
+console.log(userStr)
+const userStr1 = JSON.stringify(user1, replacer);
+console.log(userStr1)
+
+// - ejemplo con replacer como array: en este caso los valores de array indican los nombres de las propiedades del objeto que se va a incluir en la cadena JSON resultado.
+
+let foo = {foundation: "Mozilla", model: "box", week: 45, transport: "car", month: 7};
+console.log(JSON.stringify(foo, ['week', 'month']));
+
+
+//Y un ejemplo con un argumento space aprobado:
+const userStr2 = JSON.stringify(user, null, '...')
+console.log(userStr2)
+
+//___________________________JSON.parse()
+// recibe una cadena JSON y retorna un objeto de JavaScript 
+myObjJson = '{"name":"Skip","age":2,"favoriteFood":"Steak"}'
+console.log(JSON.parse(myObjJson));
+
+// Puede tomar una función como segundo argumento que puede transformar los valores de objeto antes de que se devuelvan:
+const upper = JSON.parse(userStr, (key, value) => {
+  if (typeof value === 'string') {
+    return value.toUpperCase();
+  }
+  return value;
+});
+console.log(upper);
+
+//___________________________Date
+// Los objetos Date representan en JavaScript un momento fijo en el tiempo en un formato independiente. El objeto Date contiene un Number que representa los milisegundos transcurridos desde el 1 de Enero de 1970 UTC.
+
+// - Constructor Date()
+// Cuando es llamado como una función, retorna una cadena que representa la fecha y hora actual
+
+console.log(new Date().toString());
+
+// - Métodos estáticos: 
+// https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date#m%C3%A9todos_est%C3%A1ticos
+
+// - Obtener fecha, mes y año u hora:
+
+const date = new Date();
+
+const [month, day, year] = [date.getMonth(), date.getDate(), date.getFullYear()];
+console.log(month)
+console.log(day)
+console.log(year)
+
+const [hour, minutes, seconds] = [date.getHours(), date.getMinutes(), date.getSeconds()];
+console.log(hour)
+console.log(minutes)
+console.log(seconds)
+
+// ....en proceso
