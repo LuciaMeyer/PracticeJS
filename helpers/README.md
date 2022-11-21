@@ -1,6 +1,6 @@
 
 ## ARRAYS
-<hr/><br/>
+<br/>
 
 ####  Array.from() 
 Crea una nueva instancia de Array a partir de un objeto iterable.
@@ -334,7 +334,7 @@ arrUnshift.unshift(5); // 4
 ```
 
 ##  STRINGS & NÚMEROS
-<hr/><br/>
+<br/>
 
 ####  String.fromCharCode()
 Método estático que devuelve una cadena creada mediante el uso de una secuencia de valores Unicode especificada.
@@ -569,7 +569,7 @@ for(const [key, value] of Object.entries(perro)){
 ```
 
 ##  OTROS OBJETOS Y FUNCIONES GLOBALES
-<hr/><br/>
+<br/>
 
 ####  Math
 es un objeto incorporado que tiene propiedades y métodos para constantes y funciones matemáticas. El objeto Math no se puede editar. Todas las propiedades y métodos de Math son estáticos:
