@@ -298,6 +298,7 @@ console.log(parseFloat('4.567abcdefgh'));
 //___________________________.parseInt()
 // Convierte (parsea) un argumento de tipo cadena y devuelve un entero de la base especificada.
 console.log(parseInt('1.5263')) // en este caso no considera los decimales, imprime 1
+console.log(parseInt('1111', 2)); // 15 --> binario a decimal
 
 //___________________________.toFixed()
 // Recibe un numero y devuelve la cantidad de decimales que se le indique. Devuelve una string!
@@ -312,10 +313,10 @@ let howMany = 10;
 console.log(howMany.toString());
 
 let x = 7;
-console.log(x.toString(2));
+console.log(x.toString(2)); // '111' --> de decimal a binario
 
 //___________________________.slice()
-// Extrae una sección de una cadena y devuelve una cadena nueva.
+// Extrae una sección de una cadena y devuelve una cadena nueva
 let cadena1 = "Linda mañana verdad?";
 console.log(cadena1.slice(6, -8));
 
