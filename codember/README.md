@@ -1,21 +1,22 @@
 
-# Codember - Midudev
+
+### Codember - Midudev
 
 Solución a los retos de [codember.dev](https://codember.dev/) una iniciativa de [midudev](https://github.com/midudev)
 
-## Lenguaje
+#### Lenguaje
 
 ```
 JavaScript 
 ```
 
-## Retos
+#### Retos
 | Reto | Solución |
 | --- | --- |
-| 1 | [¡Arregla Twitter!](/challenge01/) |
-| 2 | [¡Atrapa a esos ciber criminales!](/challenge02/) |
-| 3 | [La zebra de colores](/challenge03/) |
-| 4 | [Encuentra la contraseña de tu amigo](/challenge04/) |
+| 1 | [¡Arregla Twitter!](/codember/challenge01) |
+| 2 | [¡Atrapa a esos ciber criminales!] |
+| 3 | [La zebra de colores] |
+| 4 | [Encuentra la contraseña de tu amigo] |
 
 ## Instalación
 
