@@ -71,7 +71,6 @@ Cambia todos los elementos en un arreglo por un valor estático, desde el índi
 // reemplaza con 0 desde posición 2 a length 4
 ```
  
-
 ####  .filter()
 Recorre el array y retorna un nuevo array con aquellos elementos que pasen una determinada condición.
 

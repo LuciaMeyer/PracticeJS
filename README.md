@@ -1,18 +1,20 @@
-<h3 align="center">✔️ PRACTICE </h3>
-<p>Repositorio de práctica y estudio en lenguaje JavaScript</p>
+### ✔️ PRACTICE
+
+#### Repositorio de práctica y estudio en lenguaje JavaScript
+
 <hr/>
-<span>🎓 Estudio: [...métodos, propiedades, bucles] [...array, string, objeto]</span>
+🎓 Estudio: [...métodos, propiedades, iteraciones] [...array, string, objeto]
 
-<span>--> <a href="https://github.com/LuciaMeyer/practice/tree/main/helpers" target="_blank"> ir</a></span>&nbsp;
+--> <a href="https://github.com/LuciaMeyer/practice/tree/main/helpers" target="_blank"> ir</a>&nbsp;
 <hr/>
-<span>📌 Ejercicios: adventJS midudev: 25 días de retos con JavaScript</span>
+📌 Ejercicios: adventJS midudev: 25 días de retos con JavaScript
 
-<span>--> <a href="https://github.com/LuciaMeyer/practice/tree/main/adventJS" target="_blank"> repo</a></span>&nbsp;
+--> <a href="https://github.com/LuciaMeyer/practice/tree/main/adventJS" target="_blank"> repo</a>&nbsp;
 
-<span>--> <a href="https://adventjs.dev/" target="_blank"> sitio</a></span>&nbsp;
+--> <a href="https://adventjs.dev/" target="_blank"> sitio</a>&nbsp;
 <hr/>
-<span>📌 Ejercicios: codember midudev </span>
+📌 Ejercicios: codember midudev 
 
-<span>--> <a href="https://github.com/LuciaMeyer/practice/tree/main/codember" target="_blank"> repo</a></span>&nbsp;
+--> <a href="https://github.com/LuciaMeyer/practice/tree/main/codember" target="_blank"> repo</a>&nbsp;
 
-<span>--> <a href="https://codember.dev/" target="_blank"> sitio</a></span>&nbsp;
+--> <a href="https://codember.dev/" target="_blank"> sitio</a>&nbsp;
