@@ -317,8 +317,8 @@ console.log(x.toString(2)); // '111' --> de decimal a binario
 
 //___________________________.slice()
 // Extrae una sección de una cadena y devuelve una cadena nueva
-let cadena1 = "Linda mañana verdad?";
-console.log(cadena1.slice(6, -8));
+let cadena1 = "Hola como estás?";
+console.log(cadena1.slice(5, -7)); // mañana
 
 
 /*****************  OBJETOS  *****************/
