@@ -1,6 +1,4 @@
-
-// const line = ['11610497110107115', '102111114', '11210897121105110103', '9911110010110998101114', '11210810197115101', '11510497114101']
-
+const text = ['11610497110107115', '102111114', '11210897121105110103', '9911110010110998101114', '11210810197115101', '11510497114101']
 let obj = {
     97: 'a',
     98: 'b', 
@@ -30,25 +28,28 @@ let obj = {
     122: 'z'
 }
 
-let line = '11610497110107115'
-let letter = '';
-let word = '';
-for (let i = 0; i < line.length; i++) { 
-    if(line[0] === '1') {
-        let ver = line.slice(0,3)
-        letter += obj[ver]
-        // letter.push(obj[ver])
-        word = line.slice(3, line.length)
-    }
-  else {
-        let ver1 = line.slice(0,2)
-        letter += obj[ver1]
-        word = line.slice(2, line.length)
-  }
-  line = word
-  if(word.length <=3) letter += obj[word]
-  console.log(letter) // thanks
-  console.log(word)
+const catchCybercriminals = (text, obj) => {
+    let letter = '';
+    let nextWord = '';
+    text.forEach(word => {
+        while(!!word.length){
+            if(word[0] === '1') {
+                let ver = word.slice(0,3);
+                letter += obj[ver];
+                nextWord = word.slice(3, word.length);
+            }
+            else {
+                let ver1 = word.slice(0,2);
+                letter += obj[ver1];
+                nextWord = word.slice(2, word.length);
+            }
+            word = nextWord;
+        }
+        letter += ' '; 
+    });
+    return letter;
 }
+console.log(catchCybercriminals(text, obj)) // thanks for playing codember please share
+
 
 
