@@ -1,3 +1,5 @@
+[⬅️ volver](https://github.com/LuciaMeyer/practice)
+
 
 ### Ejercicios de práctica
 extraídos de distintas páginas y entrevistas técnicas.
@@ -10,7 +12,7 @@ extraídos de distintas páginas y entrevistas técnicas.
 JavaScript 
 ```
 
-- [01exercises](/codember/challenge01)
+- [01exercises](https://github.com/LuciaMeyer/practice/blob/main/exercises_random/01exercises.js)
 
 ```
 01 - Comparar dos arrays y extraer el o los elementos que no tenagn en común.

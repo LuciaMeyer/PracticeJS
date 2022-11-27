@@ -25,6 +25,6 @@
 
 #### Ejercicios random
 
-- [repo](https://github.com/LuciaMeyer/practice/blob/main/helpers/exercises_random.js)
+- [repo](https://github.com/LuciaMeyer/practice/tree/main/exercises_random)
 
 
