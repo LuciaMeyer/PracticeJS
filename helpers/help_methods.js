@@ -256,7 +256,7 @@ console.log(String.fromCharCode(...Array(123).keys()).slice(97).split(''));
 console.log('abc'.repeat(2));    
 
 //___________________________.split()
-// Divide (fragmenta) un string en dos o más sub cadenas usando un separador (divisor)
+// Divide (fragmenta) un string en dos o más sub cadenas usando un separador (divisor) y los guarda en un array
 let arr3 = 'hola como estas'
 console.log(arr3.split(' '));
 

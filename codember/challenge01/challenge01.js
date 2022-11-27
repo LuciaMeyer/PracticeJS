@@ -1,24 +1,32 @@
 import axios from 'axios';
 
-(async () => {
-    const usersFile = (await axios.get('https://codember.dev/users.txt')).data;
-    const REQUIRED_FIELDS = ['usr', 'eme', 'psw', 'age', 'loc', 'fll'];
-    
+const fixTwitter = async () => {
+
+    const usersTxt = (await axios.get('https://codember.dev/users.txt')).data;
+    const KEYS = ['usr', 'eme', 'psw', 'age', 'loc', 'fll'];
+
     let currentUser = 0;
-    const users = usersFile.split('\n').reduce((acc, value) => {
-        if(value === '') {
-            currentUser++;
-            return acc;
-        }
+    const users = usersTxt.split('\n').reduce((acc, value) => {
+        if(value === '') currentUser++;
         acc[currentUser] = acc[currentUser] ? [acc[currentUser], value].join(' ') : value;
         return acc;
     },[]);
 
-    const validUsers = users.filter(user => {
-        return REQUIRED_FIELDS.every((field) => user.includes(`${field}:`))
-    })
-    console.log(validUsers.length);
-    console.log(validUsers.pop());
-})();
+    const validUsers = users.filter(u => {
+        return KEYS.every(key => u.includes(`${key}:`));
+    })  
 
-// solution >> $ submit 156@giroz
+    console.log(validUsers.length, validUsers.pop());
+}
+
+fixTwitter();
+
+// solution >> $ submit 156@giroz 
+
+
+/* PASO A PASO 
+- con split guardo en un array cada renglon como una cadena separada de la siguiente por un salto de línea
+- con reduce busco unir todos los datos de un mismo usuario en una sola cadena hasta q se encuentre con un ''
+que es lo que separa del próximo usuario
+filtro cada una de esas cadenas para validar que tenga todos los datos requeridos KEYS
+*/

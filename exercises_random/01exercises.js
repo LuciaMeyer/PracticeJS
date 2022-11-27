@@ -16,9 +16,8 @@ Se considera que una matriz vacía tiene 0 de currentSum más grande.
 */
 
 export function maxSequenceSum( arr ) {
-  let maxSum = 0;
-  let sum = 0;
-  if(arr.length === 0) return 0;
+  let maxSum = 0, sum = 0;
+  if(!arr.length) return 0;
   if(arr.every(e => Math.sign(e) === -1)) return 0;
   if(arr.every(e => Math.sign(e) === 1)) {
     maxSum = arr.reduce((acc, i) => acc + i);
@@ -26,7 +25,7 @@ export function maxSequenceSum( arr ) {
   for (let i = 0; i < arr.length; i++) {
       sum += arr[i]
       if(sum < 0) sum = 0
-      if(maxSum < sum) maxSum = sum;
+      if(sum > maxSum) maxSum = sum;
   }
   return maxSum;
 }
