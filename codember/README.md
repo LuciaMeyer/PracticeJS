@@ -10,7 +10,6 @@ Solución a los retos de [codember.dev](https://codember.dev/) una iniciativa de
 JavaScript 
 ```
 
-#### Retos
 | Reto | Solución |
 | --- | --- |
 | 1 | [¡Arregla Twitter!](/codember/challenge01) |
