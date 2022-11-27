@@ -1,6 +1,6 @@
 [⬅️ volver](https://github.com/LuciaMeyer/practice/tree/main/codember)
 
-### ---------->>> Reto 1: ¡Atrapa a esos ciber criminales! <<<----------
+### ---------->>> Reto 2: ¡Atrapa a esos ciber criminales! <<<----------
 
 ## Problema
 
