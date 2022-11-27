@@ -17,7 +17,7 @@ const fixTwitter = async () => {
     })  
 
     console.log(validUsers.length, validUsers.pop());
-}
+};
 
 fixTwitter();
 

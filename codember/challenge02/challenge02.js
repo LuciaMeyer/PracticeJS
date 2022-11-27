@@ -29,26 +29,25 @@ let obj = {
 }
 
 const catchCybercriminals = (text, obj) => {
-    let letter = '';
+    let decryptedText = '';
     let nextWord = '';
+
     text.forEach(word => {
         while(!!word.length){
             if(word[0] === '1') {
-                let ver = word.slice(0,3);
-                letter += obj[ver];
+                decryptedText += obj[word.slice(0,3)];
                 nextWord = word.slice(3, word.length);
             }
             else {
-                let ver1 = word.slice(0,2);
-                letter += obj[ver1];
+                decryptedText += obj[word.slice(0,2)];
                 nextWord = word.slice(2, word.length);
             }
             word = nextWord;
         }
-        letter += ' '; 
+        decryptedText += ' '; 
     });
-    return letter;
-}
+    return decryptedText;
+};
 console.log(catchCybercriminals(text, obj)) // thanks for playing codember please share
 
 
