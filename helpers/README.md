@@ -1,3 +1,5 @@
+[⬅️ volver](https://github.com/LuciaMeyer/practice)
+
 
 ## ARRAYS
 <br/>
@@ -446,7 +448,7 @@ cadena1.slice(6, -8); // 'mañana'
 ```
 
 ##  OBJETOS
-<hr/><br/>
+<br/>
 
 ####  for...in
 Recorre el objeto como un for, y por cada paso se puede obteter la propiedad y el valor de la misma
@@ -671,6 +673,10 @@ seconds // 46
 ```
 
 ....en proceso
+
+[⬆️ subir](#arrays)
+
+[⬅️  volver](https://github.com/LuciaMeyer/practice)
 
 
 
