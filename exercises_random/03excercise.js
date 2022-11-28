@@ -11,17 +11,17 @@ N = 5               N=6
                     | 6 |
 */
 
-const pyramidalArray = numero => {
-    let entrada = Math.round(numero/2)
+const pyramidalArray = number => {
+    let columns = Math.round(number/2) // cantidad de columnas del array
     let arr = []
     num = 1
     let array = []
 
-    for (let i = 0; i < numero; i++) {
+    for (let i = 0; i < number; i++) {
         arr[i] = new Array()
     }
-    for (let i = 0; i < entrada; i++) {
-        for (let j = i; j < (numero-i); j++) {
+    for (let i = 0; i < columns; i++) { 
+        for (let j = i; j < (number-i); j++) {
             arr[j][i] = num
             num++        
         }    
@@ -35,4 +35,4 @@ const pyramidalArray = numero => {
 
 console.log(pyramidalArray(5));
 console.log(pyramidalArray(6));
-console.log(pyramidalArray(7));
+console.log(pyramidalArray(12));
