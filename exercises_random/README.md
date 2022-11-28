@@ -22,7 +22,7 @@ Comparar dos arrays y extraer el o los elementos que no tenagn en común.
 Encontrar dentro de un array un subarreglo contiguo con la mayor suma.
 ```
 
-- [03exercises](https://github.com/LuciaMeyer/practice/blob/main/exercises_random/03exercises.js)
+- [03exercises](https://github.com/LuciaMeyer/practice/blob/main/exercises_random/03excercise.js)
 ```
 Construir una matriz asimétrica piramidal mediante un número.
 ```
