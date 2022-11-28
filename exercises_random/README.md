@@ -13,10 +13,19 @@ JavaScript
 ```
 
 - [01exercises](https://github.com/LuciaMeyer/practice/blob/main/exercises_random/01exercises.js)
+```
+Comparar dos arrays y extraer el o los elementos que no tenagn en común.
+```
 
+- [02exercises](https://github.com/LuciaMeyer/practice/blob/main/exercises_random/02exercises.js)
 ```
-01 - Comparar dos arrays y extraer el o los elementos que no tenagn en común.
-02 - Encontrar dentro de un array un subarreglo contiguo con la mayor suma.
+Encontrar dentro de un array un subarreglo contiguo con la mayor suma.
 ```
+
+- [03exercises](https://github.com/LuciaMeyer/practice/blob/main/exercises_random/03exercises.js)
+```
+Construir una matriz asimétrica piramidal mediante un número.
+```
+
 
 
