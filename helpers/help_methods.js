@@ -75,7 +75,7 @@ let arr2 = [2, 5, , 9];
 arr2.forEach((e, i, arr) => console.log(`elem= ${e} index= ${i} arr= [${arr}]`));
 
 //___________________________for...of
-// Ejecuta un bloque de código para cada elemento de un objeto iterable como array o string
+// Ejecuta un bloque de código para cada elemento de un objeto iterable como array o string. La variable definida refiere al valor, a diferencia del for...in que retorna el indice del mismo
 let forOfArray = [10, 20, 30];
 for (let value of forOfArray) {
   console.log(value);
@@ -91,7 +91,7 @@ for (let value of forOfString) {
 
 Determina si una matriz incluye un determinado elemento, devuelve true o false según corresponda.
 Recibe 2 parámetros:
-- value`ToFind: El valor a buscar
+- valueToFind: El valor a buscar
 - fromIndex (opcional): Posición en la matriz en la cuál se debe comenzar a buscar valueToFind; el primer caracter a buscar se encuentra en fromIndex. Un valor negativo inicia la búsqueda desde array.length + fromIndex en adelante. El valor por defecto es 0.
 Si fromIndex es mayor o igual que la longitud de la matriz, se devuelve false. No se buscará en la matriz.
 */
@@ -324,11 +324,27 @@ console.log(cadena1.slice(5, -7)); // mañana
 /*****************  OBJETOS  *****************/
 
 //___________________________for...in
-// recorre el objeto como un for, y por cada paso se puede obteter la propiedad y el valor de la misma
-const object = { a: 1, b: 2, c: 3 };
-for (const prop in object) {
-  console.log(`${prop}: ${object[prop]}`);
-}
+// Puede aplicarse para array, string y objetos.
+// Retorna el indice o key, a diferencia del forof que retorna el valor
+
+const forInObject = { a: 1, b: 2, c: 3 };
+for (const key in forInObject) {
+  console.log(key)
+  console.log(`${key}: ${forInObject[key]}`);
+};
+
+const forInArray = [6,7,8];
+for (const i in forInArray) {
+  console.log(i)
+  console.log(forInArray[i])
+};
+
+const forInString = 'lucia';
+for (const i in forInString) {
+  console.log(i)
+  console.log(forInString[i])
+};
+
 
 //___________________________Object.entries()
 // Devuelve un array de pares [key, value] de un objeto dado
