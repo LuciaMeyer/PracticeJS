@@ -484,6 +484,8 @@ console.log(upper);
 // Cuando es llamado como una función, retorna una cadena que representa la fecha y hora actual
 
 console.log(new Date().toString());
+let date1 = new Date()
+console.log(date1.toLocaleDateString())
 
 // - Métodos estáticos: 
 // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date#m%C3%A9todos_est%C3%A1ticos

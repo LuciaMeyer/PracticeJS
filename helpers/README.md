@@ -664,6 +664,8 @@ Cuando es llamado como una función, retorna una cadena que representa la fecha 
 
 ```js
 new Date().toString(); // 'Sun Nov 20 2022 23:18:30 GMT-0300 (hora estándar de Argentina)'
+let date = new Date()
+date.toLocaleDateString(); // '11/12/2022'
 ```
 
 - Métodos estáticos: 
