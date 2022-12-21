@@ -76,6 +76,7 @@ arr2.forEach((e, i, arr) => console.log(`elem= ${e} index= ${i} arr= [${arr}]`))
 
 //___________________________for...of
 // Ejecuta un bloque de código para cada elemento de un objeto iterable como array o string
+// No puede iterar objetos, a diferencia del forin que si puede, otra diferencia con el forin es que este retorna el indice y el forof retorna el valor
 let forOfArray = [10, 20, 30];
 for (let value of forOfArray) {
   console.log(value);
@@ -324,10 +325,24 @@ console.log(cadena1.slice(5, -7)); // mañana
 /*****************  OBJETOS  *****************/
 
 //___________________________for...in
-// recorre el objeto como un for, y por cada paso se puede obteter la propiedad y el valor de la misma
-const object = { a: 1, b: 2, c: 3 };
-for (const prop in object) {
-  console.log(`${prop}: ${object[prop]}`);
+// Puede iterar strings, objetos y arrays.
+// Si recorre string o array la const retorna el indice (a diferencia del forof que retorna el valor)
+// Si recorre un objeto la constante retorna la prop del mismo
+const forInString = 'hola'
+for (const i in forInString) {
+  console.log(i);
+  console.log(forInString[i]);
+}
+
+const forInArray = [10,11,12]
+for (const i in forInArray) {
+  console.log(i);
+  console.log(forInArray[i]);
+}
+
+const forInObject = { a: 1, b: 2, c: 3 };
+for (const prop in forInObject) {
+  console.log(`${prop}: ${forInObject[prop]}`);
 }
 
 //___________________________Object.entries()
@@ -442,7 +457,6 @@ console.log(userStr1)
 let foo = {foundation: "Mozilla", model: "box", week: 45, transport: "car", month: 7};
 console.log(JSON.stringify(foo, ['week', 'month']));
 
-
 //Y un ejemplo con un argumento space aprobado:
 const userStr2 = JSON.stringify(user, null, '...')
 console.log(userStr2)
@@ -487,3 +501,5 @@ console.log(minutes)
 console.log(seconds)
 
 // ....en proceso
+
+
