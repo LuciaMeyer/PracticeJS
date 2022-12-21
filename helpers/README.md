@@ -114,7 +114,7 @@ arr2.forEach((e, i, arr) => console.log(`elem= ${e} index= ${i} arr= [${arr}]`))
 ```
 
 ####  for...of
-Ejecuta un bloque de código para cada elemento de un objeto iterable como array o string
+Ejecuta un bloque de código para cada elemento de un objeto iterable como array o string. La variable definida refiere al valor, a diferencia del for...in que retorna el indice del mismo
 
  ```js
 let forOfArray = [10, 20, 30];
@@ -142,7 +142,7 @@ ARRAY:
 
 Determina si una matriz incluye un determinado elemento, devuelve true o false según corresponda.
 Recibe 2 parámetros:
-- value`ToFind: El valor a buscar
+- valueToFind: El valor a buscar
 - fromIndex (opcional): Posición en la matriz en la cuál se debe comenzar a buscar valueToFind; el primer caracter a buscar se encuentra en fromIndex. Un valor negativo inicia la búsqueda desde array.length + fromIndex en adelante. El valor por defecto es 0.
 Si fromIndex es mayor o igual que la longitud de la matriz, se devuelve false. No se buscará en la matriz.
 
@@ -451,13 +451,26 @@ cadena1.slice(6, -8); // 'mañana'
 <br/>
 
 ####  for...in
-Recorre el objeto como un for, y por cada paso se puede obteter la propiedad y el valor de la misma
+Puede aplicarse para array, string y objetos. Retorna el indice o key, a diferencia del forof que retorna el valor
 
   ```js
-const object = { a: 1, b: 2, c: 3 };
-for (const prop in object) {
-`${prop}: ${object[prop]}`;
-} // 'c: 3'
+const forInObject = { a: 1, b: 2, c: 3 };
+for (const key in forInObject) {
+  console.log(key) // a, b, c
+  console.log(`${key}: ${forInObject[key]}`); // a: 1, b: 2, c: 3
+};
+
+const forInArray = [6,7,8];
+for (const i in forInArray) {
+  console.log(i) // 0, 1, 2
+  console.log(forInArray[i]) // 6, 7, 8
+};
+
+const forInString = 'lucia';
+for (const i in forInString) {
+  console.log(i) // 0, 1, 2, 3, 4
+  console.log(forInString[i]) // l, u, c, i, a
+};
 ```
 ####  Object.entries()
  Devuelve un array de pares [key, value] de un objeto dado.
@@ -575,9 +588,9 @@ for(const [key, value] of Object.entries(perro)){
 ####  Math
 es un objeto incorporado que tiene propiedades y métodos para constantes y funciones matemáticas. El objeto Math no se puede editar. Todas las propiedades y métodos de Math son estáticos:
 
---> <a href="https:developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math" target="_blank">link</a>
+--> [link](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math)
 
---> <a href="https:lenguajejs.com/javascript/number/objeto-math/" target="_blank">link</a>
+--> [link](https://lenguajejs.com/javascript/number/objeto-math/)
  
 ####  JSON.stringify()
  recibe un objeto de JavaScript y lo transforma en una cadena JSON.
@@ -651,6 +664,8 @@ Cuando es llamado como una función, retorna una cadena que representa la fecha 
 
 ```js
 new Date().toString(); // 'Sun Nov 20 2022 23:18:30 GMT-0300 (hora estándar de Argentina)'
+let date = new Date()
+date.toLocaleDateString(); // '11/12/2022'
 ```
 
 - Métodos estáticos: 
@@ -677,6 +692,3 @@ seconds // 46
 [⬆️ subir](#arrays)
 
 [⬅️  volver](https://github.com/LuciaMeyer/practice)
-
-
-

@@ -1,4 +1,3 @@
-
 /***************** ARRAYS  *****************/
 
 // --> MÉTODOS ESTÁTICOS
@@ -48,7 +47,7 @@ const test = (value) => value < 40;
 console.log([39, 29, 10].every(test));
 
 //___________________________.fill()
-// Cambia todos los elementos en un arreglo por un valor estático, desde el índice start (por defecto 0) hasta el índice end (por defecto array.length). Devuelve el arreglo modificado.
+// Cambia todos los elementos en un arreglo por un valor estático, desde el índice start (por defecto 0) hasta el índice end (por defecto array.length). Devuelve el arreglo modificado.
 console.log([1, 2, 3, 4].fill(0, 2, 4));
 // reemplaza con 0 desde posición 2 a length 4
 
@@ -57,11 +56,11 @@ console.log([1, 2, 3, 4].fill(0, 2, 4));
 console.log([7, 5, 9].filter(n => n > 7));
 
 //___________________________.find()
-// Recorre el array y retorna la primera coincidencia del elemento que se busca, o undefined si ninguno lo cumple.
+// Recorre el array y retorna la primera coincidencia del elemento que se busca, o undefined si ninguno lo cumple.
 console.log([7, 5, 9, 8].find(n => n > 7));
 
 //___________________________.findIndex()
-// Devuelve el índice del primer elemento del array que cumpla la condición, o -1 si nunguno lo cumple.
+// Devuelve el índice del primer elemento del array que cumpla la condición, o -1 si nunguno lo cumple.
 console.log([7, 5, 9, 8].findIndex(n => n > 7));
 
 //___________________________.flat() 
@@ -70,13 +69,12 @@ let arr1 = [1, 2, [3, 4, [5, 6]]];
 console.log(arr1.flat(2))
 
 //___________________________.forEach() 
-// Llama a la función pasada como parámetro para todos los elementos del array.
+// Llama a la función pasada como parámetro para todos los elementos del array.
 let arr2 = [2, 5, , 9];
 arr2.forEach((e, i, arr) => console.log(`elem= ${e} index= ${i} arr= [${arr}]`));
 
 //___________________________for...of
-// Ejecuta un bloque de código para cada elemento de un objeto iterable como array o string
-// No puede iterar objetos, a diferencia del forin que si puede, otra diferencia con el forin es que este retorna el indice y el forof retorna el valor
+// Ejecuta un bloque de código para cada elemento de un objeto iterable como array o string. La variable definida refiere al valor, a diferencia del for...in que retorna el indice del mismo
 let forOfArray = [10, 20, 30];
 for (let value of forOfArray) {
   console.log(value);
@@ -89,10 +87,9 @@ for (let value of forOfString) {
 
 //___________________________.includes() --> ARRAY & STRING
 /* ARRAY:
-
 Determina si una matriz incluye un determinado elemento, devuelve true o false según corresponda.
 Recibe 2 parámetros:
-- value`ToFind: El valor a buscar
+- valueToFind: El valor a buscar
 - fromIndex (opcional): Posición en la matriz en la cuál se debe comenzar a buscar valueToFind; el primer caracter a buscar se encuentra en fromIndex. Un valor negativo inicia la búsqueda desde array.length + fromIndex en adelante. El valor por defecto es 0.
 Si fromIndex es mayor o igual que la longitud de la matriz, se devuelve false. No se buscará en la matriz.
 */
@@ -103,7 +100,6 @@ arrInlc.includes('c', 100); // false
 
 /*
 STRING:
-
 Determina si una cadena de texto puede ser encontrada dentro de otra cadena de texto, devolviendo true o false según corresponda.
 Recibe 2 parámetros:
 - searchString: Una cadena a buscar en el texto.
@@ -304,7 +300,7 @@ console.log(parseInt('1111', 2)); // 15 --> binario a decimal
 //___________________________.toFixed()
 // Recibe un numero y devuelve la cantidad de decimales que se le indique. Devuelve una string!
 let num = 1.235486
-num1 = num.toFixed(2)
+let num1 = num.toFixed(2)
 console.log(num1)
 console.log(parseFloat(num1)) // lo paso a número
 
@@ -325,25 +321,27 @@ console.log(cadena1.slice(5, -7)); // mañana
 /*****************  OBJETOS  *****************/
 
 //___________________________for...in
-// Puede iterar strings, objetos y arrays.
-// Si recorre string o array la const retorna el indice (a diferencia del forof que retorna el valor)
-// Si recorre un objeto la constante retorna la prop del mismo
-const forInString = 'hola'
-for (const i in forInString) {
-  console.log(i);
-  console.log(forInString[i]);
-}
-
-const forInArray = [10,11,12]
-for (const i in forInArray) {
-  console.log(i);
-  console.log(forInArray[i]);
-}
+// Puede aplicarse para array, string y objetos.
+// Retorna el indice o key, a diferencia del forof que retorna el valor
 
 const forInObject = { a: 1, b: 2, c: 3 };
-for (const prop in forInObject) {
-  console.log(`${prop}: ${forInObject[prop]}`);
-}
+for (const key in forInObject) {
+  console.log(key)
+  console.log(`${key}: ${forInObject[key]}`);
+};
+
+const forInArray = [6,7,8];
+for (const i in forInArray) {
+  console.log(i)
+  console.log(forInArray[i])
+};
+
+const forInString = 'lucia';
+for (const i in forInString) {
+  console.log(i)
+  console.log(forInString[i])
+};
+
 
 //___________________________Object.entries()
 // Devuelve un array de pares [key, value] de un objeto dado
@@ -457,6 +455,7 @@ console.log(userStr1)
 let foo = {foundation: "Mozilla", model: "box", week: 45, transport: "car", month: 7};
 console.log(JSON.stringify(foo, ['week', 'month']));
 
+
 //Y un ejemplo con un argumento space aprobado:
 const userStr2 = JSON.stringify(user, null, '...')
 console.log(userStr2)
@@ -482,6 +481,8 @@ console.log(upper);
 // Cuando es llamado como una función, retorna una cadena que representa la fecha y hora actual
 
 console.log(new Date().toString());
+let date1 = new Date()
+console.log(date1.toLocaleDateString())
 
 // - Métodos estáticos: 
 // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date#m%C3%A9todos_est%C3%A1ticos
@@ -501,5 +502,3 @@ console.log(minutes)
 console.log(seconds)
 
 // ....en proceso
-
-
