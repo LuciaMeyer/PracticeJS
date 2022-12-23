@@ -1,8 +1,8 @@
 [⬅️ volver](https://github.com/LuciaMeyer/practice/tree/main/codember)
 
-### ---------->>> Reto 4:  <<<----------
+### ---------->>> Reto 4:  Encuentra la contraseña de tu amigo <<<----------
 
-## Problema: Encuentra la contraseña de tu amigo
+## Problema: 
 Un amigo compró 5 BitCoins en 2008. El problema es que lo tenía en un monedero digital... ¡y no se acuerda de la contraseña!
 
 Nos ha pedido ayuda. Y nos ha dado algunas pistas:
