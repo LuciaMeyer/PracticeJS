@@ -11,9 +11,9 @@
 <hr/>
 📌 Ejercicios:
 
-#### AdventJS midudev: 25 días de retos con JavaScript
+#### AdventJS 2021 midudev: 25 días de retos con JavaScript
 
-- [repo](https://github.com/LuciaMeyer/practice/tree/main/adventJS)
+- [repo](https://github.com/LuciaMeyer/practice/tree/main/adventJS_2021)
 
 - [sitio](https://adventjs.dev/)
 
