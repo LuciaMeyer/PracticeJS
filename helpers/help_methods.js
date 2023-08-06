@@ -342,7 +342,6 @@ for (const i in forInString) {
   console.log(forInString[i])
 };
 
-
 //___________________________Object.entries()
 // Devuelve un array de pares [key, value] de un objeto dado
 objEntries = {a:1, b:2, c:3};
@@ -456,7 +455,7 @@ let foo = {foundation: "Mozilla", model: "box", week: 45, transport: "car", mont
 console.log(JSON.stringify(foo, ['week', 'month']));
 
 
-//Y un ejemplo con un argumento space aprobado:
+// Y un ejemplo con un argumento space aprobado:
 const userStr2 = JSON.stringify(user, null, '...')
 console.log(userStr2)
 
@@ -502,3 +501,14 @@ console.log(minutes)
 console.log(seconds)
 
 // ....en proceso
+// Object.getOwnPropertyDescriptor() ver
+// Object.defineProperty()
+// Nullish operator ?? || && - ??= ||= &&= 
+// Object.hasOwn() es lo mimso que hasOwnProperty() pero más optimizado
+// ES14 sale este año
+// .toSorted()
+// .findLast
+// .findLastIndex()
+// .toReversed()
+// .with()
+// .toSpliced
