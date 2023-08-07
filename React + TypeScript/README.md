@@ -1,46 +1,44 @@
-# Getting Started with Create React App
+## React + TypeScript
+*Pequeña aplicación en dónde realizo una serie de ejercicios usando los hooks de React con TypeScript.*
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto esta creado con [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Scripts
 
-In the project directory, you can run:
+En la carpeta madre:\
+`npm install` para instalar las dependencias\
+`npm start` para levantar la aplicación
+Ejecuta la aplicación en el modo de desarrollo.\
 
-### `npm start`
+Abrir [http://localhost:3000](http://localhost:3000) para verlo en el navegador.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+### Pros de usar TypeScript:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> #### **Tipado estático:**
+> Proporciona mayor seguridad y detección temprana de errores en tiempo de compilación, lo que puede evitar errores comunes en tiempo de ejecución.
+>
+> #### **Mejora la calidad del código:**
+> Al utilizar tipos de datos y interfaces, TypeScript ayuda a mantener un código más legible, estructurado y fácil de mantener.
+>
+> #### **Autocompletado y sugerencias:**
+> El sistema de tipos de TypeScript permite un autocompletado más sólido y sugerencias más útiles en los editores de código, lo que aumenta la productividad del desarrollador.
+>
+> #### **Refactorización más segura:**
+> Gracias a la información de tipos, las refactorizaciones se vuelven más seguras y menos propensas a introducir errores inadvertidos.
+>
+> #### **Integración con herramientas y librerías:**
+> TypeScript es compatible con una amplia variedad de herramientas y librerías, lo que facilita su integración en proyectos existentes.
 
-### `npm run build`
+### Contras de usar TypeScript:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+> #### **Curva de aprendizaje:**
+> Para aquellos que no están familiarizados con el tipado estático, TypeScript puede requerir una curva de aprendizaje inicial más pronunciada.
+>
+> #### **Mayor sobrecarga:**
+> El proceso de compilación y la adición de tipos pueden generar un poco de sobrecarga adicional en comparación con el desarrollo directo en JavaScript.
+>
+> #### **Más estricto:**
+> TypeScript puede ser más restrictivo en ciertos escenarios, lo que puede requerir más esfuerzo para definir tipos complejos y dinámicos.
+>
