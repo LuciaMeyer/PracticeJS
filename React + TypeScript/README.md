@@ -7,7 +7,7 @@ Este proyecto esta creado con [Create React App](https://github.com/facebook/cre
 
 En la carpeta madre:\
 `npm install` para instalar las dependencias\
-`npm start` para levantar la aplicación
+`npm start` para levantar la aplicación\
 Ejecuta la aplicación en el modo de desarrollo.\
 
 Abrir [http://localhost:3000](http://localhost:3000) para verlo en el navegador.
