@@ -1,6 +1,10 @@
 ## React + TypeScript
 *Pequeña aplicación en dónde realizo una serie de ejercicios usando los hooks de React con TypeScript.*
 
+<a href="https://www.youtube.com/watch?v=-TOVqECdiIw" target="_blank">
+  <img src="https://github.com/LuciaMeyer/PracticeJS/blob/main/React%20%2B%20TypeScript/public/img.png" alt="img" style="width: 70%;">
+</a>
+
 Este proyecto esta creado con [Create React App](https://github.com/facebook/create-react-app).
 
 ### Scripts
