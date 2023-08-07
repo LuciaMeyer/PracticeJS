@@ -4,9 +4,8 @@
 <hr/>
 
 📌 **React + TypeScript:** <br/>
-*Pequeña app para realizar una serie de ejercicios usando los hooks de React pero con TypeScript.* 
+*Pequeña aplicación en dónde realizo una serie de ejercicios usando los hooks de React con TypeScript.* 
 - [repo](https://github.com/LuciaMeyer/PracticeJS/tree/main/React%20%2B%20TypeScript)<br/>
-`npm install dentro de la carpeta madre y luego npm start`
 
 <hr/>
 
