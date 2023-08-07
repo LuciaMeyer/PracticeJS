@@ -15,9 +15,18 @@ export const Timer = ({ mSeconds }: TimerArg ) => {
         ref.current = setInterval( () => setSeconds(s => s +1), mSeconds)
     }, [mSeconds])
 
+    const resetSeconds = () => {
+        setSeconds(0)
+    };
+
     return(
         <>
             <h4>Timer: <small>{ seconds }</small> </h4>
+            <button
+                onClick={resetSeconds}
+                className='btn btn-outline-danger mt-2'
+                >Reset
+            </button>
         </>
     )
 };

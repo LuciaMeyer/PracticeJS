@@ -7,13 +7,17 @@ interface User_ {
 
 export const User = () => {
 
-    const [user, setUser] = useState<User_>();
+    const [user, setUser] = useState<User_ | undefined>(undefined);;
 
     const login = () => {
         setUser({
             uid: 'ABC123',
             name: 'Lucía'
         })
+    };
+
+    const deleteUser = () => {
+        setUser(undefined);
     };
 
 
@@ -24,6 +28,11 @@ export const User = () => {
                 onClick={ login }
                 className='btn btn-outline-primary'>
                 Login
+            </button>
+            <button
+                onClick={ deleteUser }
+                className='btn btn-outline-primary'>
+                Delete
             </button>
             {
                 !user 
