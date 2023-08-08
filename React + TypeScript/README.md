@@ -1,5 +1,6 @@
 ## React + TypeScript
-*Pequeña aplicación en dónde realizo una serie de ejercicios usando los hooks de React con TypeScript.*
+*Pequeña aplicación de práctica en dónde realizo una serie de ejercicios con React y TypeScript.*\
+*Hooks utilizados: `useState` - `useEffect` - `useRef` - `useReducer` - `CustomHooks` - `useContext` - `createContext`* 
 
 <a href="https://www.youtube.com/watch?v=-TOVqECdiIw" target="_blank">
   <img src="https://github.com/LuciaMeyer/PracticeJS/blob/main/React%20%2B%20TypeScript/public/img.png" alt="img" style="width: 70%;">
@@ -9,17 +10,14 @@ Este proyecto esta creado con [Create React App](https://github.com/facebook/cre
 
 ### Scripts
 
-En la carpeta madre:\
-`npm install` para instalar las dependencias\
-`npm start` para levantar la aplicación\
-Ejecuta la aplicación en el modo de desarrollo.\
-
-Abrir [http://localhost:3000](http://localhost:3000) para verlo en el navegador.
+- En la carpeta madre:\
+`npm install` y luego `npm start`
+- Ejecuta la aplicación en el modo de desarrollo
+- Abrir [http://localhost:3000](http://localhost:3000) para verlo en el navegador
 
 
 
 ### Pros de usar TypeScript:
-
 > #### **Tipado estático:**
 > Proporciona mayor seguridad y detección temprana de errores en tiempo de compilación, lo que puede evitar errores comunes en tiempo de ejecución.
 >
