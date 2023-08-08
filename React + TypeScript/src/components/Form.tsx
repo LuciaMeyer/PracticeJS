@@ -11,7 +11,7 @@ export const Form = () => {
 
 // el CustomHook nos sirve para reutilizar código para que los componentes queden sencillos
 
-    const { form, handleInput} = useForm<FormData> ({
+    const { form, handleForm} = useForm<FormData> ({
         email: 'lucia@email.com',
         name: 'Lucía',
         age: 36
@@ -28,7 +28,7 @@ export const Form = () => {
                     name='email'
                     // value={ form.email }
                     placeholder={ form.email }
-                    onChange={handleInput}
+                    onChange={handleForm}
                 />
             </div>
 
@@ -40,7 +40,7 @@ export const Form = () => {
                     name='name'
                     // value={ form.name }
                     placeholder={ form.name }
-                    onChange={handleInput}
+                    onChange={handleForm}
                 />
             </div>
 
@@ -50,9 +50,9 @@ export const Form = () => {
                     type='number'
                     className='form-control'
                     name='age'
-                    value={ form.age }
-                    // placeholder={ form.age }
-                    onChange={handleInput}
+                    // value={ form.age }
+                    placeholder={form.age.toString()}
+                    onChange={handleForm}
                 />
             </div>
 
