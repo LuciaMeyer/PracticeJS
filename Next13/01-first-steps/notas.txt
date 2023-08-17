@@ -1,0 +1,39 @@
+Práctica Next13 17/8/2023
+
+// Turbopack
+Para habilitar turbopack en package.json agregar en el script de "dev".
+Solo funciona en desarrollo. Todavía esta en beta, no se puede usar en producción, hace que la aplicación cargue más rápido
+
+"scripts": {
+    "dev": "next dev --turbo",
+...
+}
+
+// Explicación de archivos y directorios
+
+- tsconfig.json -->es el archivo de configuración de typescript
+
+- tailwind.config.ts --> configuración de tailwind
+
+- Readme --> debe usarse para dar instrucciones a otros programadores de cómo levantar y construir la aplicación
+
+- postcss.config.js --> lo instala tailwind y ayuda a hacer configuraciones de css
+
+- next.config.js --> configuraciones globales de cómo funciona nuestra aplicación con Next.
+
+- next-env.d.ts --> archivos de definición de typescript. Ayuda tener el tupado estricto de typescript
+
+- .gitignore --> todo lo que no queremos que se suba a GitHub
+
+- carpeta public --> contenido estático
+
+- carpeta app --> nuestro proyecto
+    - globals.css --> estilo global de la aplicación
+    - favicon.ico --> ícono en el navegador
+    - layout.tsx es el Rootlayout principal de nuestra aplicación
+    - page.tsx 
+
+    Lo que es propiamente de Next entonces es:
+    carpeta app + public + next.config.js
+
+// 
