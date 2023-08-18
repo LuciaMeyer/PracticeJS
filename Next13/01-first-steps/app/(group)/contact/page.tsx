@@ -1,4 +1,4 @@
-import { Metadata } from "next"
+import { Metadata } from 'next'
 
 
 export const metadata: Metadata = {
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
     return(
         <>
-            <span className="text-7xl">Contact Page</span>
+            <span className='text-7xl'>Contact Page</span>
         </>
     )
 };

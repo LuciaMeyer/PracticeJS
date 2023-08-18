@@ -5,34 +5,35 @@
 - solo se crean rutas si uso el archivo llamado page, y la ruta se identifica según el nombre de la carpeta en dónde está alojado. Si en una carpeta no tengo un archivo page no se crea rutas.
 - entonces puedo tener una carpetas components que no van a ser rutas, solo van a ser componentes que uso dentro de otros.
 - para habilitar turbopack en package.json agregar en el script de "dev". Hasta el momento Solo funciona en desarrollo. Todavía esta en beta, no se puede usar en producción, hace que la aplicación cargue más rápido
-
+`
 "scripts": {
     "dev": "next dev --turbo",
 ...
 }
+`
 - new file about/page.tsx (de esta forma crea la carpeta y dentro el archivo page)
-- todos los componentes dentro de la carpeta app son server component, como comportamiento nativo
+- todos los componentes dentro de la carpeta app son server component, como comportamiento nativo. Esto es para asegurar la velocidad del cliente y cargar la menor cantidad de javascript posible. Se recomienda que el 99% de nuestra app sean server components y sólo tengamos algunos componentes del lado del cliente 'use client' dependiendo de las interacciones o funcionalidades que queramos darle.
 
 ```
 "RESERVADOS"
 > file page --> rutas
 > file layout --> lo que envuelve a esa ruta y las que está anidando (seria nuestro anterior html y App)
-> file loading --> muestra el loading junto con el resto del html que ya tenemos hasta que el fetching de datos termine 
-> component <Suspense> funciona como el loading pero no se le puede pasar el tiempo
-> file error funciona como el loading pero cuando encuentra algún error en la carga. OJO tiene que ser si o si un 'use client'
-> fuentes e imágenes ya viene dentro del paquete de Next 13 no hace falta instalar
+> file loading --> muestra el loading junto con el resto del html que ya tenemos hasta que se termine de ejecutar lo que solicitamos 
+> component <Suspense> --> funciona como el loading pero no se le puede pasar el tiempo
+> file error --> funciona como el loading pero cuando encuentra algún error en la carga. OJO tiene que ser si o si un 'use client'
+> fuentes e imágenes --> ya viene dentro del paquete de Next 13 no hace falta instalar
 ```
 _________________________________________________________________________________________________
 
 > Explicación de archivos y directorios al crear el proyecto
 
-- tsconfig.json -->es el archivo de configuración de typescript
+- tsconfig.json --> es el archivo de configuración de typescript
 - tailwind.config.ts --> configuración de tailwind
 - Readme --> debe usarse para dar instrucciones a otros programadores de cómo levantar y construir la aplicación
 - postcss.config.js --> lo instala tailwind y ayuda a hacer configuraciones de css
 - next.config.js --> configuraciones globales de cómo funciona nuestra aplicación con Next.
-- next-env.d.ts --> archivos de definición de typescript. Ayuda tener el tupado estricto de typescript
-- .gitignore --> todo lo que no queremos que se suba a GitHub
+- next-env.d.ts --> archivos de definición de typescript. Ayuda tener el tipado estricto de typescript
+- gitignore --> todo lo que no queremos que se suba a GitHub
 - carpeta public --> contenido estático
 - carpeta app --> nuestro proyecto
     - globals.css --> estilo global de la aplicación
@@ -44,8 +45,8 @@ Lo que es propiamente de Next entonces es: carpeta app + public + next.config.js
 _________________________________________________________________________________________________
 
 > Metadata - Metatags
-- ayuda al SEO para que los motores de búsqueda asocien esta página lo que se está buscando. 
-- Next permite crear metatags para cada una de nuestras pantallas. Se hace exportando una constante metadata como está en el layout principal.
+- ayuda al SEO para que los motores de búsqueda asocien a nuestra página lo que se está buscando 
+- Next permite crear metatags para cada una de nuestras pantallas. Se hace exportando una constante metadata como está en el layout principal
 
 ```
 export const metadata = {
@@ -64,52 +65,49 @@ ________________________________________________________________________________
 
 > File layout --> component: RootLayout()
 
-- seria el "html" que antes teníamos en public. Se usa como el diseño raíz de la aplicación, es dónde vamos a inyectar nuestro árbol a través de los componentes.
-- Recibe prop llamada children, que representa los componentes hijos que se renderizarán dentro del RootLayout.
-- Lo que pongamos en nuestro archivo va a impactar en todas nuestras páginas del proyecto.
-- La línea import { Inter } from 'next/font/google' importa la fuente tipográfica Inter de Google Fonts utilizando el módulo next/font/google. Esto permite utilizar la fuente Inter en la aplicación.
-- La línea const inter = Inter({ subsets: ['latin'] }) define una variable llamada inter que guarda la configuración de la fuente Inter con el subconjunto de caracteres 'latin'. Esto indica que solo se cargarán los caracteres del alfabeto latino para la fuente.
+- seria el "html" que antes teníamos en public. Se usa como el diseño raíz de la aplicación, es dónde vamos a inyectar nuestro árbol a través de los componentes
+- Recibe prop llamada children, que representa los componentes hijos que se renderizarán dentro del RootLayout
+- Lo que pongamos en nuestro archivo va a impactar en todas nuestras páginas del proyecto
+- La línea ` import { Inter } from 'next/font/google'` está importando la fuente tipográfica Inter de Google Fonts utilizando el módulo next/font/google. Esto permite utilizar la fuente Inter en la aplicación
+- La línea `const inter = Inter({ subsets: ['latin'] })` define una variable llamada inter que guarda la configuración de la fuente Inter con el subconjunto de caracteres 'latin'. Esto indica que solo se cargarán los caracteres del alfabeto latino para la fuente
 _________________________________________________________________________________________________
 
 > Layout anidados
 
 - Dentro de una ruta puedo tener otro layout que me permita construir un sub-menú o algo que no cambie dentro.
-- Importante! los layout mantienen los estados. Aunque haya actualizaciones en el renderizado, su estado no va a cambiar
 - Qué pasa si quiero compartir un layout (misma estructura) para varias rutas. Tengo que armar un "grupo". En el arbol de carpetas creo una con el nombre entre paréntesis y dentro pongo las carpetas que quiero que compartan el layout, lo que esté dentro de los paréntesis no lo toma en la URL. Y ese archivo layout lo pongo en la raíz de la carpeta del grupo.
+```
+[]-(group)
+  []-about
+  []-contact
+  -layout.tsx
+
+la url sería por ejemplo --> http://localhost:3000/about --> no aparece "group"
+```
+- Importante! los layout mantienen los estados. Aunque haya actualizaciones en el renderizado, su estado no va a cambiar
+
+_________________________________________________________________________________________________
+
+> <Link>
+
+- se importa de next/link
+- a diferencia del tag <a> permite navegar a otras rutas sin hacer un refresh general de toda nuestra aplicación
+
+_________________________________________________________________________________________________
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
 > Rutas dinámicas
 
 - para poder armarlas y suponiendo que necesitamos la ruta: /posts/:id lo que hacemos es dentro de la carpeta posts creamos una subcarpeta con el nombre [id] y dentro el archivo page.jsx para que tome esa ruta
