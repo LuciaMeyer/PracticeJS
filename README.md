@@ -3,6 +3,14 @@
 #### Repositorio de práctica y estudio en lenguaje JavaScript
 <hr/>
 
+<hr/>
+
+📌 **Vue.js** <br/>
+*Práctica del curso "Vue.js: De cero a experto" por Fernando Herrera en la plataforma DevTalles
+- [repo](https://github.com/LuciaMeyer/PracticeJS/tree/main/Vue)<br/>
+
+<hr/>
+
 📌 **React + TypeScript:** <br/>
 *Pequeña aplicación en dónde realizo una serie de ejercicios usando los hooks de React con TypeScript.* 
 - [repo](https://github.com/LuciaMeyer/PracticeJS/tree/main/React%20%2B%20TypeScript)<br/>
