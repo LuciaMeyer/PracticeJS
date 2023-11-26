@@ -2,14 +2,15 @@
 	<div>
 		<!-- <div class="bg-dark"></div> -->
 		<div class="indecision-container">
-			<p>HACEME UNA PREGUNTAR</p>
+			<p>HACEME UNA PREGUNTA</p>
 			<input v-model="question" type="text" placeholder="tu pregunta" />
 			<p>Recordá terminar con un signo de interrogración (?)</p>
 			<div v-if="isValidQuestion">
-				<h2>{{ question }}</h2>
+				<!-- <h2>{{ question }}</h2> -->
 				<h1>{{ answer === "no" ? "- NO -" : "- SI -" }}</h1>
 				<img v-if="img" :src="img" alt="b" />
 			</div>
+			<h4 v-else>tu respuesta es...</h4>
 			<button  v-if="isValidQuestion" @click="newGame">NUEVO</button>
 		</div>
 	</div>
@@ -91,8 +92,7 @@ p {
 	margin-top: 20px;
 }
 
-h1,
-h2 {
+h1, h2, h4 {
 	color: white;
 }
 
