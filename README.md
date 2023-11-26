@@ -1,6 +1,6 @@
 ### ✔️ PRACTICE
 
-#### Repositorio de práctica y estudio en lenguaje JavaScript
+#### Repositorio de práctica y estudio en lenguaje JavaScript + TypeScript
 <hr/>
 
 
