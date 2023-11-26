@@ -2,9 +2,7 @@
 *Pequeña aplicación de práctica en dónde realizo una serie de ejercicios con React y TypeScript.*\
 *Hooks utilizados: `useState` - `useEffect` - `useRef` - `useReducer` - `CustomHooks` - `useContext` - `createContext`* 
 
-<a href="https://www.youtube.com/watch?v=-TOVqECdiIw" target="_blank">
-  <img src="https://github.com/LuciaMeyer/PracticeJS/blob/main/React%20%2B%20TypeScript/public/img.png" alt="img" style="width: 70%;">
-</a>
+<img src="https://github.com/LuciaMeyer/PracticeJS/blob/main/React%20%2B%20TypeScript/public/img.png" alt="img" style="width: 70%;">
 
 Este proyecto esta creado con [Create React App](https://github.com/facebook/create-react-app).
 
