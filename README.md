@@ -7,6 +7,7 @@
 📌 **Vue.js** <br/>
 *Práctica del curso "Vue.js: De cero a experto" por Fernando Herrera en la plataforma DevTalles.*
 - [repo](https://github.com/LuciaMeyer/PracticeJS/tree/main/Vue)<br/>
+- [deploy](https://vue-poke-lm.netlify.app/)<br/>
 
 <hr/>
 
