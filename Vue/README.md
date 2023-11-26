@@ -2,7 +2,7 @@
 *Práctica del curso "Vue.js: De cero a experto" por Fernando Herrera en la plataforma DevTalles.*\
 <br/>
 
-<img src="" alt="img" style="width: 70%;">
+<img src="https://github.com/LuciaMeyer/PracticeJS/blob/main/Vue/assets/vue-js.jpeg" alt="img" style="width: 70%;">
 <br/><hr/>
 
 *Aplicaciones de Práctica*
@@ -13,4 +13,4 @@
 
 *Utils*
 
-- [PDF]()
+- [PDF](https://github.com/LuciaMeyer/PracticeJS/blob/main/Vue/assets/Vue.pdf)
