@@ -7,7 +7,7 @@
 			<PokemonOption :pokemons="pokemonArr" @selection="checkAnswer" />
 			<template  v-if="showAnswer">
 				<h2 class="fade-in">{{ msj }}</h2>
-				<button @click="newGame">Nuevo Juego</button>
+				<button @click="newGame">NUEVO JUEGO</button>
 			</template>
 		</div>
 	</div>
@@ -63,5 +63,15 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+button {
+	background-color: white;
+	border-radius: 5px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+	margin-bottom: 10px;
+	width: 250px;
+	padding: 10px 10px;
+	color: rgb(64, 64, 64);
+}
 </style>
