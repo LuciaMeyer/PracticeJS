@@ -7,7 +7,7 @@
 			<p>Recordá terminar con un signo de interrogración (?)</p>
 			<div v-if="isValidQuestion">
 				<!-- <h2>{{ question }}</h2> -->
-				<h1>{{ answer === "no" ? "- NO -" : "- SI -" }}</h1>
+				<h1>{{ answer === "no" ? "- NO -" : answer === "yes" ? "- SI -" : '...' }}</h1>
 				<img v-if="img" :src="img" alt="b" />
 			</div>
 			<h4 v-else>tu respuesta es...</h4>
