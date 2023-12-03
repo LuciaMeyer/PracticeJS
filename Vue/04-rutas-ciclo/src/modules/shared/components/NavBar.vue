@@ -1,36 +1,40 @@
 <template>
 	<div>
-		<!-- <router-link to="/">Pokemon List</router-link>
-    <router-link to="/id">Pokemon por id</router-link>
-    <router-link to="/about">About</router-link> -->
-		<CustomLink v-for="link in links" :key="link.to" :link="link" />
+		<!-- <router-link to='/'>Pokemon List</router-link>
+    <router-link to='/id'>Pokemon por id</router-link>
+    <router-link to='/about'>About</router-link> -->
+		<CustomLink v-for='link in links' :key='link.to' :link='link' />
 	</div>
 </template>
 
 <script>
-import { defineAsyncComponent } from "vue";
+import { defineAsyncComponent } from 'vue';
 
 export default {
 	data() {
 		return {
 			links: [
-				{ to: "/home", name: "Pokemons" },
-				{ to: "/pokemonid/50", name: "Por Id" },
-				{ to: "/about", name: "About" },
-				{ to: "http://google.com", name: "Google" },
+				{ to: 'pokemon-home', name: 'Pokemons' },
+				{ to: 'pokemon-id', name: 'Por Id', id: 151 },
+				{ to: 'pokemon-about', name: 'About' },
+				{ to: 'dbz-characters', name: 'Personajes' },
+				{ to: 'dbz-about', name: 'DBZ-About' },
+				{ to: 'http://google.com', name: 'Google' },
 			],
 		};
 	},
 
 	components: {
-		CustomLink: defineAsyncComponent(() => import("./CustomLink.vue")),
+		CustomLink: defineAsyncComponent(() => import('./CustomLink.vue')),
 	},
 };
 </script>
 
 <style scoped>
 div {
-	padding: 0 30px;
+	padding: 10px 20px;
+	display: flex;
+	justify-content: center;
 }
 
 div a {

@@ -4,8 +4,8 @@
 			{{ link.name }}
 		</a>
 
-		<router-link v-else :to="link.to" v-slot="{ href, isActive }">
-			<a :href="href" :class="isActive ? 'is-active' : 'normal'">
+		<router-link v-else :to="route" v-slot="{ isActive }">
+			<a :class="isActive ? 'is-active' : 'normal'">
 				{{ link.name }}
 			</a>
 		</router-link>
@@ -18,12 +18,17 @@ export default {
 		link: {
 			type: Object,
 			required: true,
-		},
+		}, 
 	},
 	computed: {
 		isExternanLink() {
 			return this.link.to.startsWith("http");
 		},
+		route() {
+			return this.link.id === undefined
+				? { name: this.link.to }
+				: { name: this.link.to, params: { id: this.link.id } }
+		}
 	},
 };
 </script>
